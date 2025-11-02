@@ -195,3 +195,13 @@ GLOBAL_DATUM_INIT(vore_cryopod, /obj/machinery/cryopod/quiet/vore, new /obj/mach
 		if(living_parent.nutrition > ABSORB_NUTRITION_BARRIER)
 			living_parent.adjust_nutrition(-ABSORB_NUTRITION_BARRIER)
 			vore_belly.unabsorb(L)
+
+/datum/digest_mode/heal
+	name = DIGEST_MODE_HEAL
+	gurgle_noises = true
+		if(vore_belly.brute_damage > 0)
+			L.adjustBruteLoss(vore_belly.brute_damage * seconds_per_tick * -1)
+			living_parent.adjust_nutrition(NUTRITION_PER_DAMAGE * vore_belly.brute_damage * -2 * seconds_per_tick)
+		if(vore_belly.burn_damage > 0)
+			L.adjustFireLoss(vore_belly.burn_damage * seconds_per_tick * -1)
+			living_parent.adjust_nutrition(NUTRITION_PER_DAMAGE * vore_belly.burn_damage * -2 * seconds_per_tick)
