@@ -206,6 +206,8 @@ GLOBAL_DATUM_INIT(vore_cryopod, /obj/machinery/cryopod/quiet/vore, new /obj/mach
 	for(var/mob/living/L in vore_belly)
 if(L.stat == DEAD)
 	RETURN false
+if(living_parent.nutrition < ABSORB_NUTRITION_BARRIER)
+	RETURN false
 		if(vore_belly.brute_damage > 0)
 			L.adjustBruteLoss(vore_belly.brute_damage * seconds_per_tick * -1)
 			living_parent.adjust_nutrition(NUTRITION_PER_DAMAGE * vore_belly.brute_damage * -1.5 * seconds_per_tick)
