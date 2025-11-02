@@ -47,6 +47,7 @@
 #define DIGEST_MODE_DIGEST "Digest"
 #define DIGEST_MODE_ABSORB "Absorb"
 #define DIGEST_MODE_UNABSORB "Unabsorb"
+#define DIGEST_MODE_HEAL "Heal"
 
 /// Max burn damage a player is allowed to set their belly to
 #define MAX_BURN_DAMAGE CONFIG_GET(number/vore_max_burn_damage) // Default: 2.5
