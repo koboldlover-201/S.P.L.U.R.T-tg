@@ -1,5 +1,4 @@
 /// If you want to make everything as easy to test as possible, uncomment this for maximum permissiveness
-// #define VORE_DEBUG
 /// Key used for versioning savefiles
 #define VORE_DB_REPO "bubber_vore"
 /// Value used for versioning savefiles
